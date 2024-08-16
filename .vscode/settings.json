@@ -10,7 +10,7 @@
 		"typescript",
 		"typescriptreact"
 	],
-	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"eslint.format.enable": true,
 	"files.exclude": {
 		"**/.git": true,
@@ -116,19 +116,20 @@
 		"*.xaml": "$(capture).xaml.cs"
 	},
 	"[typescript]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[typescriptreact]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascriptreact]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"errorLens.enabled": true,
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"editor.indentSize": "tabSize",
+	"editor.tabSize": 4,
 	"editor.formatOnSave": true,
 }
