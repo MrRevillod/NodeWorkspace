@@ -1,8 +1,9 @@
 import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
-import router from "./routes"
 import express from "express"
+
+import router from "./routes/users"
 
 import { log, config, errorHandler, extensions } from "@repo/lib"
 

@@ -1,7 +1,4 @@
-import { PrismaClient } from "@prisma/client"
 import { NextFunction, Request, Response } from "express"
-
-export const prisma = new PrismaClient()
 
 export const log = (...args: unknown[]): void => {
 	console.log("LOGGER: ", ...args)

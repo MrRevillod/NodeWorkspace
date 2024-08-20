@@ -1,5 +1,6 @@
 import { Router } from "express"
-import { prisma, JsonResponse, AppError } from "@repo/lib"
+import { prisma } from "@repo/database"
+import { JsonResponse, AppError } from "@repo/lib"
 
 const router: Router = Router()
 
