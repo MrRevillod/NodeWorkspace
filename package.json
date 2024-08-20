@@ -1,5 +1,5 @@
 {
-	"name": "kitchen-sink",
+	"name": "node-workspace",
 	"private": true,
 	"scripts": {
 		"db:migrate:deploy": "turbo run db:migrate:deploy",

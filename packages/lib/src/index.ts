@@ -1,10 +1,36 @@
-import { config } from "./config"
 import { PrismaClient } from "@prisma/client"
+import { NextFunction, Request, Response } from "express"
 
-const prisma = new PrismaClient()
+export const prisma = new PrismaClient()
 
-const log = (...args: unknown[]): void => {
+export const log = (...args: unknown[]): void => {
 	console.log("LOGGER: ", ...args)
 }
 
-export { config, prisma, log }
+declare global {
+	namespace Express {
+		interface Request {
+			extensions: Map<string, unknown>
+			setExtension: (key: string, value: unknown) => void
+			getExtension: (key: string) => unknown | undefined
+		}
+	}
+}
+
+export const extensions = (req: Request, res: Response, next: NextFunction) => {
+	req.extensions = new Map<string, unknown>()
+
+	req.setExtension = (key: string, value: unknown) => {
+		req.extensions.set(key, value)
+	}
+
+	req.getExtension = (key: string) => {
+		return req.extensions.get(key)
+	}
+
+	next()
+}
+
+export { config } from "./config"
+export type { JsonResponse } from "./types"
+export { AppError, AuthError, errorHandler } from "./errors"
